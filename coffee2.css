@@ -373,6 +373,39 @@ header .navbar {
     color: var(--primary-color);
     background: transparent;
 }
+
+/* bagian styling footer*/
+.section-footer {
+    padding: 20px 0;
+    background: var(--dark-color);
+}
+
+.section-footer .section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-footer :where(.copyright-text, 
+.sosial-link, .policy-link){
+    color: var(--white-color);
+    transition: 0.2s ease;
+}
+
+.section-footer .sosial-link-list {
+    display: flex;
+    gap: 25px;
+}
+
+.section-footer .sosial-link-list .sosial-link,
+.section-footer .policy-text .policy-link:hover {
+    color: var(--secondary-color);
+}
+
+.section-footer .policy-text .separator {
+    margin: 0 5px;
+    color: var(--white-color);
+}
 /*responsive media query width 1024*/
 @media screen and (max-width: 1024px){
     .menu-section .daftar-menu {
@@ -512,5 +545,10 @@ header .navbar {
     .menu-section .daftar-menu .menu-item,
     .section-gallery .daftar-galeri .gallery-item {
         width: 100%;
+    }
+
+    .section-footer .section-content{
+        flex-direction: column;
+        gap: 20px;
     }
 }
