@@ -448,6 +448,16 @@ header .navbar {
     opacity: 1;
     background: var(--secondary-color);   
 }
+
+.testimonial-section .swiper-slide-button {
+    color: var(--secondary-color);
+    transition: 0.3s ease;
+}
+
+.testimonial-section .swiper-slide-button:hover {
+    color: var(--primary-color);
+}
+
 /*responsive media query width 1024px*/
 @media screen and (max-width: 1024px){
     .menu-section .daftar-menu {
