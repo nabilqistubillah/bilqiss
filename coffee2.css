@@ -33,7 +33,7 @@
     /* Border radius */
     --border-radius-s: 8px;
     --border-radius-m: 30px;
-    --border-radius-circle: 700;
+    --border-radius-circle: 50%;
 
     /* Site max width*/
     --site-max-width: 1300px;
@@ -410,7 +410,20 @@ header .navbar {
     margin: 0 5px;
     color: var(--white-color);
 }
-/*responsive media query width 1024*/
+
+/* Bagian styling Testimonials */
+.testimonial-section {
+    padding: 50px 0 100px;
+    background: var(--light-pink-color);
+}
+
+.testimonial-section .testimonial .user-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--border-radius-circle);
+}
+/*responsive media query width 1024px*/
 @media screen and (max-width: 1024px){
     .menu-section .daftar-menu {
         gap: 60px;
