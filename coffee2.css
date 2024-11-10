@@ -441,6 +441,13 @@ header .navbar {
 .testimonial-section .testimonial .feedback {
     line-height: 25px;
 }
+
+.testimonial-section .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    opacity: 1;
+    background: var(--secondary-color);   
+}
 /*responsive media query width 1024px*/
 @media screen and (max-width: 1024px){
     .menu-section .daftar-menu {
