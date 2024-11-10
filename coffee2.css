@@ -208,7 +208,6 @@ header .navbar {
     width: 400px;
     height: 400px;
     object-fit: cover;
-    border-radius: var(--border-radius-circle);
 }
 
 .about-section .about-details .section-judul {
@@ -464,7 +463,7 @@ header .navbar {
     color: var(--primary-color);
 }
 
-/*responsive media query width 1024px*/
+/*responsive media query code max width 1024px*/
 @media screen and (max-width: 1024px){
     .menu-section .daftar-menu {
         gap: 60px;

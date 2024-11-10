@@ -1,3 +1,4 @@
+const navLinks = document.querySelectorAll(".nav-menu .nav-link");
 const menuOpenButton = document.querySelector("#menu-open-button");
 const menuCloseButton = document.querySelector("#menu-close-button");
 
@@ -6,7 +7,12 @@ menuOpenButton.addEventListener("click", () => {
 
 });
 
+//tutup menu ketika tombol di klik
 menuCloseButton.addEventListener("click", () => menuOpenButton.click ());
+
+navLinks.forEach(link => {
+    link.addEventListener("click", () => menuOpenButton.click ())
+});
 
 // inisialisasi swiper
 const swiper = new Swiper('.slider-wrapper', {
@@ -14,14 +20,14 @@ const swiper = new Swiper('.slider-wrapper', {
     grabCursor: true,
     spaceBetween: 25,
   
-    // If we need pagination
+    // jika dengan pagination atau halaman
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
       dynamicBullets: true,
     },
   
-    // Navigation arrows
+    // Panah navigasi
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
