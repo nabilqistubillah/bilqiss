@@ -417,6 +417,11 @@ header .navbar {
     background: var(--light-pink-color);
 }
 
+.testimonial-section .slider-wrapper {
+    overflow: hidden;
+    margin: 0 60px 50px;
+}
+
 .testimonial-section .testimonial {
     display: flex;
     padding: 35px;
