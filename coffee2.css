@@ -455,6 +455,7 @@ header .navbar {
 }
 
 .testimonial-section .swiper-slide-button {
+    margin-top: -50px;
     color: var(--secondary-color);
     transition: 0.3s ease;
 }
@@ -557,7 +558,7 @@ header .navbar {
 
     .about-section .section-content {
         gap: 70px;
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     .about-section .about-image-wrapper .about-image {
@@ -607,5 +608,13 @@ header .navbar {
     .section-footer .section-content{
         flex-direction: column;
         gap: 20px;
+    }
+
+    .testimonial-section .slider-wrapper {
+        margin: 0 0 30px;
+    }
+
+    .testimonial-section .swiper-slide-button {
+        display: none;
     }
 }
