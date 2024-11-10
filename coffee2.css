@@ -417,11 +417,29 @@ header .navbar {
     background: var(--light-pink-color);
 }
 
+.testimonial-section .testimonial {
+    display: flex;
+    padding: 35px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 .testimonial-section .testimonial .user-image {
     width: 180px;
     height: 180px;
     object-fit: cover;
+    margin-bottom: 50px;
     border-radius: var(--border-radius-circle);
+}
+
+.testimonial-section .testimonial .name {
+    margin-bottom: 16px;
+    font-size: var(--font-size-m);
+}
+
+.testimonial-section .testimonial .feedback {
+    line-height: 25px;
 }
 /*responsive media query width 1024px*/
 @media screen and (max-width: 1024px){
