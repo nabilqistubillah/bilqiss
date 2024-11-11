@@ -7,5 +7,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     echo "<h3>Terimakasih, $name!</h3>";
     echo "<p>Email, $email</p>";
     echo "<p>Pesan anda, $message</p>";
-}
+} 
 ?>
