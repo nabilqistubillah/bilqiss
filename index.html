@@ -261,13 +261,10 @@
                 </ul>
 
                 <form action="submit_form.php" method="POST" class="contact-form">
-                    <input type="text" placeholder="your name" class="form-input" 
-                    required>
-                    <input type="email" placeholder="your email" class="form-input" 
-                    required>
-                    <textarea placeholder="your massage" class="form-input"
-                    required></textarea>
-                    <button class="submit-button">Submit</button>
+                    <input type="text" name="name" placeholder="your name" class="form-input" required>
+                    <input type="email" name="email" placeholder="your email" class="form-input" required>
+                    <textarea name="message" placeholder="your message" class="form-input" required></textarea>
+                    <button type="submit" class="submit-button">Submit</button>
                 </form>
             </div>
         </section>
