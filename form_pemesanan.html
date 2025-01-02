@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .form-group textarea {
+            resize: none;
+        }
+        .form-group button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Form Pemesanan</h1>
+        <form action="proses_pemesanan.php" method="POST">
+            <!-- Nama -->
+            <div class="form-group">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+            </div>
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+            </div>
+            <!-- Pesan -->
+            <div class="form-group">
+                <label for="message">Pesan (Opsional):</label>
+                <textarea id="message" name="message" rows="3" placeholder="Masukkan pesan Anda"></textarea>
+            </div>
+            <!-- Menu -->
+            <div class="form-group">
+                <label for="menu">Menu Pilihan:</label>
+                <select id="menu_harga" name="menu_harga" required>
+                    <option value="">Pilih Menu</option>
+                    <option value="Kopi Hitam - Rp 20,000">Kopi Hitam - Rp 20,000</option>
+                    <option value="Cappuccino - Rp 30,000">Cappuccino - Rp 30,000</option>
+                    <option value="Latte - Rp 25,000">Latte - Rp 25,000</option>
+                </select>
+            </div>
+            <!-- Metode Pembayaran -->
+            <div class="form-group">
+                <label for="payment_method">Metode Pembayaran:</label>
+                <select id="payment_method" name="payment_method" required>
+                    <option value="">Pilih Metode Pembayaran</option>
+                    <option value="COD">COD (Bayar di Tempat)</option>
+                    <option value="Transfer">Transfer Bank</option>
+                </select>
+            </div>
+            <!-- Submit -->
+            <div class="form-group">
+                <button type="submit">Kirim</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
