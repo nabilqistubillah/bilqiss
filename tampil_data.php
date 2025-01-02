@@ -1,27 +1,33 @@
 <?php
-// Koneksi ke database
-$koneksi = new mysqli("localhost", "root", "", "cofee_rizz");
+include 'koneksi.php';
 
-if ($koneksi->connect_error) {
-    die("Koneksi gagal: " . $koneksi->connect_error);
-}
-
-// Query data pemesan
-$sql = "SELECT * FROM data_pemesan";
-$result = $koneksi->query($sql);
+$query = "SELECT * FROM data_pemesan";
+$result = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Pemesan</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Gunakan file CSS untuk desain -->
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    <h1>Data Pemesan</h1>
-    <table border="1">
+    <h2 style="text-align: center;">Data Pemesan</h2>
+    <table>
         <tr>
             <th>ID</th>
             <th>Nama</th>
@@ -32,23 +38,26 @@ $result = $koneksi->query($sql);
             <th>Waktu Pesan</th>
         </tr>
         <?php
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr>
-                        <td>{$row['id_pemesan']}</td>
-                        <td>{$row['nama']}</td>
-                        <td>{$row['email']}</td>
-                        <td>{$row['pesan']}</td>
-                        <td>{$row['total_harga']}</td>
-                        <td>{$row['metode_bayar']}</td>
-                        <td>{$row['waktu_pesan']}</td>
-                    </tr>";
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>";
+                echo "<td>" . $row['id_pemesan'] . "</td>";
+                echo "<td>" . $row['nama'] . "</td>";
+                echo "<td>" . $row['email'] . "</td>";
+                echo "<td>" . $row['pesan'] . "</td>";
+                echo "<td>Rp " . number_format($row['total_harga'], 0, ',', '.') . "</td>";
+                echo "<td>" . $row['metode_bayar'] . "</td>";
+                echo "<td>" . $row['waktu_pesan'] . "</td>";
+                echo "</tr>";
             }
         } else {
-            echo "<tr><td colspan='7'>Tidak ada data pemesan</td></tr>";
+            echo "<tr><td colspan='7'>Belum ada data pemesan.</td></tr>";
         }
-        $koneksi->close();
         ?>
     </table>
 </body>
 </html>
+
+<?php
+mysqli_close($conn);
+?>

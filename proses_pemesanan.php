@@ -55,8 +55,8 @@
 </body>
 </html>
 
-
 <?php
+
 // Konfigurasi koneksi ke database
 $servername = "localhost";
 $username = "root"; // Sesuaikan dengan username database-mu
@@ -98,6 +98,8 @@ if (isset($_POST['menu_harga']) && isset($_POST['payment_method'])) {
     echo "Error: Data tidak lengkap!";
     exit;
 }
+
+
 
 
 // Tutup koneksi
