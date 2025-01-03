@@ -1,7 +1,23 @@
+<form method="GET" action="">
+    <input type="text" name="cari" placeholder="Cari nama atau email" value="<?php echo isset($_GET['cari']) ? $_GET['cari'] : ''; ?>">
+    <button type="submit">Cari</button>
+</form>
+
+<td>
+    <a href="edit_pemesan.php?id=<?php echo $row['id_pemesan']; ?>">Edit</a>
+</td>
+
+
+
 <?php
 include 'koneksi.php';
 
+$cari = isset($_GET['cari']) ? $_GET['cari'] : '';
+
 $query = "SELECT * FROM data_pemesan";
+if (!empty($cari)) {
+    $query .= " WHERE nama LIKE '%$cari%' OR email LIKE '%$cari%'";
+}
 $result = mysqli_query($conn, $query);
 ?>
 
