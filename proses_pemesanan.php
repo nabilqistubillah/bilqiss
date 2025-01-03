@@ -48,8 +48,9 @@
 <body>
     <div class="container">
         <h1>Pemesanan Berhasil!</h1>
+        
         <p>Terima kasih telah memesan di Cofee Rizz.</p>
-        <p>Kami akan memproses pesanan Anda segera.</p>
+        <p>Kami akan memproses pesanan Anda segera. <br> <a href="tampil_data.php">Data Pemesan</a> </p>
         <a href="index.html" class="btn">Kembali ke Beranda</a>
     </div>
 </body>
