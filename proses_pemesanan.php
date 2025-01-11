@@ -3,58 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konfirmasi Pemesanan</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            text-align: center;
-        }
-        .container h1 {
-            color: #28a745;
-            margin-bottom: 10px;
-        }
-        .container p {
-            color: #6c757d;
-            margin: 0;
-        }
-        .btn {
-            margin-top: 20px;
-            display: inline-block;
-            padding: 10px 20px;
-            color: #ffffff;
-            background-color: #007bff;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Konfirmasi Pesanan</title>
+    <link rel="stylesheet" href="styless.css"> <!-- Tambahkan CSS eksternal -->
 </head>
 <body>
-    <div class="container">
-        <h1>Pemesanan Berhasil!</h1>
-        
-        <p>Terima kasih telah memesan di Cofee Rizz.</p>
-        <p>Kami akan memproses pesanan Anda segera. <br> <a href="tampil_data.php">Data Pemesan</a> </p>
-        <a href="index.html" class="btn">Kembali ke Beranda</a>
+    <div class="confirmation-container">
+        <div class="confirmation-box">
+            <h1 class="success-title">Pesanan Berhasil!</h1>
+            <p class="success-message">Terima kasih telah memesan di Cofee Rizz. Kami akan memproses pesanan Anda segera.</p>
+            <p class="success-note">Pesanan Anda berhasil disimpan!</p>
+            <div class="button-container">
+                <a href="tampil_data.php" class="action-button">Data Pemesan</a>
+                <a href="index.php" class="action-button primary-button">Kembali ke Beranda</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
+
 
 <?php
 
