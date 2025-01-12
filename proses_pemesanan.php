@@ -67,8 +67,6 @@ if (isset($_POST['menu_harga']) && isset($_POST['payment_method'])) {
 }
 
 
-
-
 // Tutup koneksi
 $conn->close();
 ?>
