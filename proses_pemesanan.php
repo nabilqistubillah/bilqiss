@@ -52,8 +52,34 @@ $sql = "INSERT INTO data_pemesan (nama, email, pesan, total_harga, metode_bayar)
 
 if ($conn->query($sql) === TRUE) {
     echo "Pesanan Anda berhasil disimpan!";
-    // Redirect ke halaman lain jika perlu, misalnya:
-    // header("Location: sukses.html");
+
+    // Kirim notifikasi Telegram
+    $message = "Pemesanan Baru:\n"
+             . "Nama: $nama\n"
+             . "Email: $email\n"
+             . "Pesan: $pesan\n"
+             . "Total Harga: $total_harga\n"
+             . "Metode Bayar: $metode_bayar";
+
+    $botToken = "7296974230:AAHwHWXm1Oj65b10qd_2eqsfVWywZ0uVtJA"; // Ganti dengan token bot Telegram Anda
+    $chatId = "7354820684"; // Ganti dengan chat ID Anda
+    $url = "https://api.telegram.org/bot$botToken/sendMessage";
+
+    $data = [
+        'chat_id' => $chatId,
+        'text' => $message
+    ];
+
+    $options = [
+        'http' => [
+            'header' => "Content-Type:application/x-www-form-urlencoded\r\n",
+            'method' => 'POST',
+            'content' => http_build_query($data),
+        ]
+    ];
+    $context = stream_context_create($options);
+    file_get_contents($url, false, $context);
+
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
@@ -65,7 +91,6 @@ if (isset($_POST['menu_harga']) && isset($_POST['payment_method'])) {
     echo "Error: Data tidak lengkap!";
     exit;
 }
-
 
 // Tutup koneksi
 $conn->close();
