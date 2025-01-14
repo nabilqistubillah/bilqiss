@@ -21,6 +21,7 @@
                     <th>Email</th>
                     <th>Pesanan</th>
                     <th>Metode Bayar</th>
+                    <th>Total Harga</th>
                     <th>Waktu Pesan</th>
                     <th>Aksi</th>
                 </tr>
@@ -52,6 +53,7 @@
                             <td>{$row['email']}</td>
                             <td>{$row['pesan']}</td>
                             <td>{$row['metode_bayar']}</td>
+                            <td>{$row['total_harga']}</td>
                             <td>{$row['waktu_pesan']}</td>
                             <td>
                                 <a href='edit_data.php?id={$row['id_pemesan']}' class='button edit-button'>Edit</a>
